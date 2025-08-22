@@ -1,0 +1,993 @@
+<!-- Hero Section -->
+<section class="hero min-h-screen relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="absolute inset-0 bg-base-100/80 backdrop-blur-sm"></div>
+  <div
+    class="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl"
+  ></div>
+  <div
+    class="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/20 rounded-full blur-3xl"
+  ></div>
+
+  <div class="hero-content text-center relative z-10 max-w-6xl mx-auto px-4">
+    <div class="max-w-4xl">
+      <!-- Badge with NIT -->
+      <div class="badge badge-primary badge-lg mb-6">
+        ✨ NIT {{ organizationInfo.nit }} - Transformando vidas desde 2016
+      </div>
+
+      <!-- Main Title -->
+      <h1
+        class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-primary leading-tight"
+      >
+        {{ organizationInfo.name }}
+      </h1>
+
+      <!-- Tagline -->
+      <div class="mb-6">
+        <p class="text-2xl md:text-3xl font-semibold text-accent italic">
+          "{{ organizationInfo.tagline }}"
+        </p>
+      </div>
+
+      <!-- Subtitle -->
+      <p
+        class="text-lg md:text-xl lg:text-2xl mb-8 text-base-content/80 max-w-3xl mx-auto leading-relaxed"
+      >
+        Formulamos y ejecutamos proyectos, organizamos eventos, brindamos apoyo
+        psicosocial a población vulnerable y promovemos programas de formación y
+        capacitación, siempre propendiendo por el bienestar integral de la niñez
+        y la comunidad, con el fin mejorar su calidad de vida.
+      </p>
+
+      <!-- Impact Stats -->
+      <div
+        class="stats stats-vertical lg:stats-horizontal shadow-lg mb-8 bg-white/80 backdrop-blur-sm"
+      >
+        <div class="stat place-items-center">
+          <div class="stat-title text-primary font-semibold">
+            Niños, Niñas y Adolescentes
+          </div>
+          <div class="stat-value text-2xl lg:text-3xl text-primary">
+            {{ impactStats.peopleHelped() }}+
+          </div>
+          <div class="stat-desc">Atendidos integralmente</div>
+        </div>
+        <div class="stat place-items-center">
+          <div class="stat-title text-secondary font-semibold">
+            Proyectos Sociales
+          </div>
+          <div class="stat-value text-2xl lg:text-3xl text-secondary">
+            {{ impactStats.activeProjects() }}
+          </div>
+          <div class="stat-desc">En ejecución activa</div>
+        </div>
+        <div class="stat place-items-center">
+          <div class="stat-title text-accent font-semibold">
+            Voluntarios Activos
+          </div>
+          <div class="stat-value text-2xl lg:text-3xl text-accent">
+            {{ impactStats.volunteers() }}+
+          </div>
+          <div class="stat-desc">Comprometidos con la transformación</div>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <button
+          class="btn btn-primary btn-lg px-8 shadow-lg"
+          (click)="scrollToSection('programs')"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+            />
+          </svg>
+          Conoce Nuestros Programas
+        </button>
+        <button
+          class="btn btn-outline btn-secondary btn-lg px-8 shadow-lg"
+          routerLink="/volunteer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+          Únete como Voluntario
+        </button>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-primary"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sobre Nosotros Section -->
+<section class="py-20 bg-base-100">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">
+        Sobre Nosotros
+      </h2>
+      <div class="badge badge-outline badge-secondary mb-8">
+        Matrícula Mercantil N.º {{ organizationInfo.matricula }}
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+      <!-- Información Legal -->
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body">
+          <h3 class="card-title text-primary mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            Información Institucional
+          </h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between">
+              <span class="font-semibold">NIT:</span>
+              <span>{{ organizationInfo.nit }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="font-semibold">Matrícula Mercantil:</span>
+              <span>{{ organizationInfo.matricula }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="font-semibold">Fecha de Inscripción:</span>
+              <span>{{ organizationInfo.registrationDate }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="font-semibold">Registro N.º:</span>
+              <span>{{ organizationInfo.registrationNumber }}</span>
+            </div>
+            <div class="divider"></div>
+            <p class="text-xs text-base-content/70">
+              Inscrita en el Libro I de las personas jurídicas sin ánimo de
+              lucro y régimen especial, en la
+              {{ organizationInfo.chamberOfCommerce }}.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Descripción Principal -->
+      <div>
+        <h3 class="text-2xl font-bold mb-6 text-primary">
+          Nuestra Misión de Transformación
+        </h3>
+        <div class="space-y-4">
+          <div class="card bg-base-100 border-l-4 border-primary">
+            <div class="card-body py-4">
+              <p class="text-base-content/90">
+                La Fundación Niños Dejando Huellas tiene un
+                <strong>alcance nacional e internacional</strong>, se enfrenta a
+                las más diversas realidades y problemáticas de la sociedad,
+                sobre todo a aquellas que involucran a los niños, niñas y
+                Adolescentes desarrollando un esquema de atención integral e
+                incluyente.
+              </p>
+            </div>
+          </div>
+
+          <div class="card bg-base-100 border-l-4 border-secondary">
+            <div class="card-body py-4">
+              <p class="text-base-content/90">
+                Trabajamos con organizaciones de carácter
+                <strong>público y privado</strong> del orden regional, nacional
+                e internacional que tengan propósitos afines a los nuestros y
+                que vinculen soluciones a los problemas que afectan a la
+                comunidad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Misión y Visión Section -->
+<section class="py-20 bg-base-200">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">
+        Nuestra Misión y Visión
+      </h2>
+      <p class="text-lg text-base-content/70 max-w-3xl mx-auto">
+        Construyendo un futuro mejor para los niños, niñas y adolescentes más
+        vulnerables
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Misión -->
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-center mb-6">
+            <div
+              class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mr-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-primary">Misión</h3>
+          </div>
+          <p class="text-base-content/90 leading-relaxed">
+            Ofrecer alternativas para la
+            <strong>atención integral de poblaciones vulnerables</strong>, en
+            especial de los niños, niñas y adolescentes en relación al apoyo
+            psicosocial, promoviendo la <strong>protección de derechos</strong>,
+            el mejoramiento de la calidad de vida y el bienestar integral de los
+            niños.
+          </p>
+        </div>
+      </div>
+
+      <!-- Visión -->
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-center mb-6">
+            <div
+              class="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mr-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-secondary">Visión</h3>
+          </div>
+          <div class="space-y-4">
+            <div class="badge badge-outline badge-accent mb-2">Visión 2035</div>
+            <p class="text-base-content/90 leading-relaxed">
+              Para <strong>2035</strong>, la Fundación Niños Dejando Huellas se
+              convertirá en <strong>herramienta de superación</strong> de los
+              problemas que afectan a las poblaciones más vulnerables,
+              principalmente de niños, niñas y adolescentes,
+              <strong>articulando esfuerzos</strong> con otras organizaciones
+              públicas y privadas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Objetivos Section -->
+<section class="py-20 bg-base-100">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">
+        Nuestros Objetivos
+      </h2>
+      <p class="text-lg text-base-content/70 max-w-3xl mx-auto">
+        Cinco pilares fundamentales que guían nuestro trabajo hacia el bienestar
+        integral
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Objetivo 1: Proyectos -->
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body text-center">
+          <div
+            class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              />
+            </svg>
+          </div>
+          <h3 class="card-title justify-center text-lg mb-3">
+            Formulación de Proyectos
+          </h3>
+          <p class="text-sm text-base-content/80">
+            Formular y ejecutar proyectos, planes y programas para la atención
+            de niños, niñas y adolescentes vulnerables.
+          </p>
+        </div>
+      </div>
+
+      <!-- Objetivo 2: Apoyo Psicosocial -->
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body text-center">
+          <div
+            class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              />
+            </svg>
+          </div>
+          <h3 class="card-title justify-center text-lg mb-3">
+            Apoyo Psicosocial
+          </h3>
+          <p class="text-sm text-base-content/80">
+            Ofrecer apoyo psicosocial a población vulnerable, brindando
+            acompañamiento integral y especializado.
+          </p>
+        </div>
+      </div>
+
+      <!-- Objetivo 3: Alianzas -->
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body text-center">
+          <div
+            class="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+          </div>
+          <h3 class="card-title justify-center text-lg mb-3">
+            Alianzas Estratégicas
+          </h3>
+          <p class="text-sm text-base-content/80">
+            Establecer alianzas y articular esfuerzo para la promoción y defensa
+            de los derechos de los niños, niñas y adolescentes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Objetivo 4: Capacitación -->
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body text-center">
+          <div
+            class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253"
+              />
+            </svg>
+          </div>
+          <h3 class="card-title justify-center text-lg mb-3">
+            Formación Integral
+          </h3>
+          <p class="text-sm text-base-content/80">
+            Ofrecer programas de capacitación y formación integral para la vida,
+            desarrollando habilidades y competencias.
+          </p>
+        </div>
+      </div>
+
+      <!-- Objetivo 5: Actividades Lúdicas -->
+      <div class="card bg-base-200 shadow-xl md:col-span-2 lg:col-span-1">
+        <div class="card-body text-center">
+          <div
+            class="w-16 h-16 bg-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293H15M9 10V9a3 3 0 116 0v1M9 10H5m10 0h4"
+              />
+            </svg>
+          </div>
+          <h3 class="card-title justify-center text-lg mb-3">
+            Actividades Saludables
+          </h3>
+          <p class="text-sm text-base-content/80">
+            Planear y realizar actividades lúdicas, culturales y deportivas que
+            promuevan hábitos saludables y desarrollo integral.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Programs Section -->
+<section id="programs" class="py-20 bg-base-200">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">
+        Nuestros Programas de Impacto
+      </h2>
+      <p class="text-lg text-base-content/70 max-w-3xl mx-auto">
+        Desarrollamos iniciativas integrales que abordan las necesidades más
+        urgentes de nuestras comunidades
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Education Program -->
+      <div
+        class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group"
+      >
+        <figure class="px-6 pt-6">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+              />
+            </svg>
+          </div>
+        </figure>
+        <div class="card-body text-center">
+          <h3 class="card-title justify-center text-lg">Educación</h3>
+          <p class="text-sm text-base-content/70">
+            Becas educativas y programas de alfabetización para niños y adultos
+          </p>
+          <div class="card-actions justify-center mt-4">
+            <button
+              class="btn btn-sm btn-primary btn-outline"
+              routerLink="/programs/education"
+            >
+              Ver más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Health Program -->
+      <div
+        class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group"
+      >
+        <figure class="px-6 pt-6">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              />
+            </svg>
+          </div>
+        </figure>
+        <div class="card-body text-center">
+          <h3 class="card-title justify-center text-lg">Salud</h3>
+          <p class="text-sm text-base-content/70">
+            Atención médica gratuita y campañas de prevención comunitaria
+          </p>
+          <div class="card-actions justify-center mt-4">
+            <button
+              class="btn btn-sm btn-primary btn-outline"
+              routerLink="/programs/health"
+            >
+              Ver más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Environment Program -->
+      <div
+        class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group"
+      >
+        <figure class="px-6 pt-6">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+              />
+            </svg>
+          </div>
+        </figure>
+        <div class="card-body text-center">
+          <h3 class="card-title justify-center text-lg">Medio Ambiente</h3>
+          <p class="text-sm text-base-content/70">
+            Reforestación, reciclaje y educación ambiental sostenible
+          </p>
+          <div class="card-actions justify-center mt-4">
+            <button
+              class="btn btn-sm btn-primary btn-outline"
+              routerLink="/programs/environment"
+            >
+              Ver más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Community Program -->
+      <div
+        class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group"
+      >
+        <figure class="px-6 pt-6">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+          </div>
+        </figure>
+        <div class="card-body text-center">
+          <h3 class="card-title justify-center text-lg">
+            Desarrollo Comunitario
+          </h3>
+          <p class="text-sm text-base-content/70">
+            Microcréditos, capacitación laboral y emprendimiento social
+          </p>
+          <div class="card-actions justify-center mt-4">
+            <button
+              class="btn btn-sm btn-primary btn-outline"
+              routerLink="/programs/community"
+            >
+              Ver más
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Logros en el Proceso Section -->
+<section class="py-20 bg-base-100">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">
+        Logros en el Proceso
+      </h2>
+      <p class="text-lg text-base-content/70 max-w-3xl mx-auto">
+        Resultados tangibles de nuestro compromiso con la transformación social
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Logro 1: Capacitación -->
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-center mb-4">
+            <div
+              class="w-12 h-12 bg-primary rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+            </div>
+            <h3 class="card-title text-lg ml-3">Programas de Capacitación</h3>
+          </div>
+          <p class="text-base-content/80 mb-4">
+            Brindamos programas de
+            <strong>capacitación y formación para la vida</strong>,
+            desarrollando habilidades técnicas y humanas en beneficiarios de
+            todas las edades.
+          </p>
+          <div class="badge badge-primary badge-outline">Educación</div>
+        </div>
+      </div>
+
+      <!-- Logro 2: Proyectos Sociales -->
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-center mb-4">
+            <div
+              class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                />
+              </svg>
+            </div>
+            <h3 class="card-title text-lg ml-3">Proyectos Incluyentes</h3>
+          </div>
+          <p class="text-base-content/80 mb-4">
+            <strong
+              >Ejecución de proyectos de carácter social e incluyente</strong
+            >, diseñados para atender las necesidades específicas de cada
+            comunidad.
+          </p>
+          <div class="badge badge-secondary badge-outline">
+            Inclusión Social
+          </div>
+        </div>
+      </div>
+
+      <!-- Logro 3: Asesoría Institucional -->
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-center mb-4">
+            <div
+              class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="card-title text-lg ml-3">Asesoría y Políticas</h3>
+          </div>
+          <p class="text-base-content/80 mb-4">
+            <strong>Atención y asesoría</strong> a organizaciones públicas y
+            privadas en la planeación de políticas para la atención a población
+            vulnerable.
+          </p>
+          <div class="badge badge-accent badge-outline">Políticas Públicas</div>
+        </div>
+      </div>
+
+      <!-- Logro 4: Gestión de Recursos -->
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-center mb-4">
+            <div
+              class="w-12 h-12 bg-info rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                />
+              </svg>
+            </div>
+            <h3 class="card-title text-lg ml-3">Gestión de Recursos</h3>
+          </div>
+          <p class="text-base-content/80 mb-4">
+            <strong>Gestionamos recursos</strong> para la ejecución de programas
+            dirigidos a niños, niñas, adolescentes, adulto mayor y población
+            vulnerable.
+          </p>
+          <div class="badge badge-info badge-outline">Gestión</div>
+        </div>
+      </div>
+
+      <!-- Logro 5: Eventos Culturales -->
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-center mb-4">
+            <div
+              class="w-12 h-12 bg-success rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                />
+              </svg>
+            </div>
+            <h3 class="card-title text-lg ml-3">Eventos Culturales</h3>
+          </div>
+          <p class="text-base-content/80 mb-4">
+            <strong
+              >Desarrollo de eventos artísticos, culturales y deportivos</strong
+            >
+            que fortalecen el tejido social y promueven la participación
+            comunitaria.
+          </p>
+          <div class="badge badge-success badge-outline">Cultura</div>
+        </div>
+      </div>
+
+      <!-- Logro 6: Atención Indígena -->
+      <div class="card bg-base-200 shadow-xl">
+        <div class="card-body">
+          <div class="flex items-center mb-4">
+            <div
+              class="w-12 h-12 bg-warning rounded-full flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                />
+              </svg>
+            </div>
+            <h3 class="card-title text-lg ml-3">Atención Integral Indígena</h3>
+          </div>
+          <p class="text-base-content/80 mb-4">
+            <strong
+              >Atención integral a niños, niñas y adolescentes indígenas</strong
+            >, respetando su cultura y promoviendo sus derechos ancestrales.
+          </p>
+          <div class="badge badge-warning badge-outline">
+            Diversidad Cultural
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-20 bg-primary text-primary-content">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+      ¿Listo para Hacer la Diferencia?
+    </h2>
+    <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
+      Tu apoyo puede transformar vidas. Únete a nuestra misión y sé parte del
+      cambio que el mundo necesita.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <button class="btn btn-accent btn-lg px-8 shadow-lg" routerLink="/donate">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 mr-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+          />
+        </svg>
+        Donar Ahora
+      </button>
+      <button
+        class="btn btn-outline btn-primary-content btn-lg px-8 shadow-lg"
+        routerLink="/volunteer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 mr-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+          />
+        </svg>
+        Ser Voluntario
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-16 bg-base-200">
+  <div class="container mx-auto px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      <h3 class="text-2xl md:text-3xl font-bold mb-4 text-base-content">
+        Mantente Conectado
+      </h3>
+      <p class="text-base-content/70 mb-8">
+        Recibe noticias sobre nuestros proyectos, historias de impacto y formas
+        de participar
+      </p>
+
+      <div class="join w-full max-w-md mx-auto">
+        <input
+          class="input input-bordered join-item flex-1"
+          placeholder="tu@email.com"
+          [(ngModel)]="newsletterEmail"
+          type="email"
+        />
+        <button
+          class="btn btn-primary join-item"
+          (click)="subscribeNewsletter()"
+          [class.loading]="isSubscribing()"
+        >
+          Suscribirse
+        </button>
+      </div>
+
+      <p class="text-xs text-base-content/50 mt-4">
+        Al suscribirte, aceptas recibir correos electrónicos de FuniHuellas.
+        Puedes cancelar tu suscripción en cualquier momento.
+      </p>
+    </div>
+  </div>
+</section>
