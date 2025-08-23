@@ -33,7 +33,9 @@ import { filter } from 'rxjs/operators';
             <li><a (click)="scrollToSection('impacto')">Nuestro Impacto</a></li>
             <li><a (click)="scrollToSection('programas')">Programas</a></li>
             <li><a (click)="scrollToSection('nosotros')">Nosotros</a></li>
-            <li><a (click)="scrollToSection('transparencia')">Transparencia</a></li>
+            <li>
+              <a (click)="scrollToSection('transparencia')">Transparencia</a>
+            </li>
             <li><a (click)="scrollToSection('contacto')">Contacto</a></li>
           </ul>
         </div>
@@ -43,26 +45,56 @@ import { filter } from 'rxjs/operators';
           >
             <span class="text-primary-content text-sm font-bold">F</span>
           </div>
-          <a routerLink="/home" class="btn btn-ghost text-lg font-bold">FUNIHUELLAS</a>
+          <a routerLink="/home" class="btn btn-ghost text-lg font-bold"
+            >FUNIHUELLAS</a
+          >
         </div>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
           <li>
-            <a (click)="scrollToSection('impacto')" class="hover:text-primary cursor-pointer">Nuestro Impacto</a>
+            <a
+              (click)="scrollToSection('impacto')"
+              class="hover:text-primary cursor-pointer"
+              >Nuestro Impacto</a
+            >
           </li>
-          <li><a (click)="scrollToSection('programas')" class="hover:text-primary cursor-pointer">Programas</a></li>
-          <li><a (click)="scrollToSection('nosotros')" class="hover:text-primary cursor-pointer">Nosotros</a></li>
           <li>
-            <a (click)="scrollToSection('transparencia')" class="hover:text-primary cursor-pointer"
+            <a
+              (click)="scrollToSection('programas')"
+              class="hover:text-primary cursor-pointer"
+              >Programas</a
+            >
+          </li>
+          <li>
+            <a
+              (click)="scrollToSection('nosotros')"
+              class="hover:text-primary cursor-pointer"
+              >Nosotros</a
+            >
+          </li>
+          <li>
+            <a
+              (click)="scrollToSection('transparencia')"
+              class="hover:text-primary cursor-pointer"
               >Transparencia</a
             >
           </li>
-          <li><a (click)="scrollToSection('contacto')" class="hover:text-primary cursor-pointer">Contacto</a></li>
+          <li>
+            <a
+              (click)="scrollToSection('contacto')"
+              class="hover:text-primary cursor-pointer"
+              >Contacto</a
+            >
+          </li>
         </ul>
       </div>
       <div class="navbar-end">
-        <a (click)="scrollToSection('donar')" class="btn btn-primary cursor-pointer">Donar Ahora</a>
+        <a
+          (click)="scrollToSection('donar')"
+          class="btn btn-primary cursor-pointer"
+          >Donar Ahora</a
+        >
       </div>
     </div>
   `,
@@ -79,7 +111,7 @@ import { filter } from 'rxjs/operators';
 })
 export class NavbarComponent {
   private router = inject(Router);
-  
+
   constructor() {
     // Listen to route changes to handle scroll behavior
     this.router.events
@@ -88,11 +120,11 @@ export class NavbarComponent {
         // Reset scroll position when navigating to a new route
         window.scrollTo(0, 0);
       });
-    
+
     // Add scroll listener for navbar styling
     this.setupScrollListener();
   }
-  
+
   /**
    * Scroll to a specific section on the page
    * @param sectionId - The ID of the section to scroll to
@@ -108,7 +140,7 @@ export class NavbarComponent {
       this.performScroll(sectionId);
     }
   }
-  
+
   /**
    * Perform the actual scrolling to the section
    * @param sectionId - The ID of the section to scroll to
@@ -119,14 +151,14 @@ export class NavbarComponent {
       // Calculate offset to account for fixed navbar
       const navbarHeight = 80; // Approximate navbar height
       const elementPosition = element.offsetTop - navbarHeight;
-      
+
       window.scrollTo({
         top: elementPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   }
-  
+
   /**
    * Setup scroll listener for navbar styling effects
    */
