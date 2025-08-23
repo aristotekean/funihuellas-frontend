@@ -22,86 +22,56 @@
     </div>
 
     <!-- Video Testimonials Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 justify-items-center"
+    >
       @for (testimonial of videoTestimonials; track testimonial.id) {
       <div
-        class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300"
+        class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-sm overflow-hidden"
       >
         <div class="card-body p-0">
           <!-- YouTube Player Container -->
-          <div
-            class="relative aspect-[9/16] bg-black rounded-t-2xl overflow-hidden group"
-          >
-            <!-- YouTube Player with Custom Styling -->
-            <div class="relative w-full h-full">
+          <div class="relative bg-black rounded-t-2xl overflow-hidden">
+            <!-- Responsive container for YouTube player -->
+            <div class="aspect-video w-full">
               <youtube-player
                 [videoId]="testimonial.videoId"
-                [width]="300"
-                [height]="533"
-                [playerVars]="{ 
-                  controls: 0, 
-                  showinfo: 0, 
-                  modestbranding: 1, 
-                  rel: 0,
-                  iv_load_policy: 3
-                }"
-                placeholderImageQuality="high"
-                [placeholderButtonLabel]="'Reproducir testimonio de ' + testimonial.name"
-                class="w-full h-full object-cover rounded-t-2xl"
-                (ready)="onPlayerReady($event)"
-                (stateChange)="onPlayerStateChange($event)"
+                placeholderImageQuality="standard"
+                class="w-full h-full"
               ></youtube-player>
+            </div>
 
-              <!-- Custom Overlay for Better UX -->
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none"
-              ></div>
-
-              <!-- User Info Overlay -->
-              <div
-                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4 pointer-events-none"
-              >
-                <h3 class="text-white font-bold text-lg drop-shadow-md">
-                  {{ testimonial.name }}
-                </h3>
-                <p class="text-white/90 text-sm drop-shadow-md">
-                  {{ testimonial.role }}
-                </p>
-                <div class="flex items-center gap-2 mt-1">
-                  <svg
-                    class="w-4 h-4 text-white/70"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                    />
-                  </svg>
-                  <span class="text-white/70 text-xs drop-shadow-md"
-                    >{{ testimonial.location }}</span
-                  >
-                </div>
-              </div>
-
-              <!-- Expand Button for Full Screen -->
-              <button
-                class="absolute top-4 left-4 btn btn-circle btn-sm btn-ghost bg-black/30 hover:bg-black/50 border-none text-white pointer-events-auto"
-                (click)="playVideo(testimonial.id)"
-                [attr.aria-label]="'Ver testimonio completo de ' + testimonial.name"
-              >
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <!-- User Info Overlay -->
+            <div
+              class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4 pointer-events-none"
+            >
+              <h3 class="text-white font-bold text-lg drop-shadow-md">
+                {{ testimonial.name }}
+              </h3>
+              <p class="text-white/90 text-sm drop-shadow-md">
+                {{ testimonial.role }}
+              </p>
+              <div class="flex items-center gap-2 mt-1">
+                <svg
+                  class="w-4 h-4 text-white/70"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
-                    d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
                   />
                 </svg>
-              </button>
+                <span class="text-white/70 text-xs drop-shadow-md"
+                  >{{ testimonial.location }}</span
+                >
+              </div>
             </div>
           </div>
 
           <!-- Testimonial Content -->
           <div class="p-6">
             <blockquote
-              class="text-base-content/90 italic mb-4 leading-relaxed"
+              class="text-base-content/90 italic mb-4 leading-relaxed text-sm"
             >
               "{{ testimonial.quote }}"
             </blockquote>
@@ -180,82 +150,4 @@
       </div>
     </div>
   </div>
-
-  <!-- Video Modal with YouTube Player -->
-  <dialog class="modal" [class.modal-open]="showVideoModal">
-    <div class="modal-box max-w-6xl p-0 bg-black">
-      <!-- Modal Header -->
-      <div class="flex justify-between items-center p-4 bg-base-100">
-        @if (selectedVideo) {
-        <div class="flex items-center gap-3">
-          <div class="avatar placeholder">
-            <div class="bg-primary text-primary-content rounded-full w-10">
-              <span class="text-lg">{{ selectedVideo.name.charAt(0) }}</span>
-            </div>
-          </div>
-          <div>
-            <h3 class="font-bold text-lg">{{ selectedVideo.name }}</h3>
-            <p class="text-sm opacity-70">
-              {{ selectedVideo.role }} - {{ selectedVideo.location }}
-            </p>
-          </div>
-        </div>
-        }
-        <button
-          class="btn btn-sm btn-circle btn-ghost"
-          (click)="closeVideo()"
-          aria-label="Cerrar video"
-        >
-          ✕
-        </button>
-      </div>
-
-      <!-- YouTube Player Container -->
-      @if (selectedVideo) {
-      <div class="aspect-video bg-black">
-        <youtube-player
-          [videoId]="selectedVideo.videoId"
-          [width]="896"
-          [height]="504"
-          [playerVars]="getPlayerVars()"
-          class="w-full h-full"
-          (ready)="onPlayerReady($event)"
-          (stateChange)="onPlayerStateChange($event)"
-        ></youtube-player>
-      </div>
-
-      <!-- Modal Footer with Testimonial Info -->
-      <div class="p-6 bg-base-100">
-        <blockquote class="text-lg italic text-base-content/90 leading-relaxed">
-          "{{ selectedVideo.quote }}"
-        </blockquote>
-
-        <!-- Call to Action in Modal -->
-        <div class="flex flex-col sm:flex-row gap-3 mt-6">
-          <button class="btn btn-primary">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-              />
-            </svg>
-            Dona Ahora
-          </button>
-          <button class="btn btn-outline">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
-              />
-            </svg>
-            Compartir Historia
-          </button>
-        </div>
-      </div>
-      }
-    </div>
-
-    <!-- Modal Backdrop -->
-    <form method="dialog" class="modal-backdrop" (click)="closeVideo()">
-      <button>close</button>
-    </form>
-  </dialog>
 </section>
