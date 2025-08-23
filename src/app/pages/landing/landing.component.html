@@ -1,31 +1,40 @@
 <!-- Hero Section -->
-<div class="hero bg-base-200 min-h-screen">
-  <div class="hero-content text-center">
-    <div class="max-w-4xl">
-      <div class="mb-8">
-        <div class="text-sm font-semibold text-primary mb-2">
+<div class="hero bg-base-200 min-h-screen px-4 sm:px-6 lg:px-8">
+  <div class="hero-content text-center w-full">
+    <div class="max-w-4xl w-full">
+      <div class="mb-6 sm:mb-8">
+        <div
+          class="text-xs sm:text-sm font-semibold text-primary mb-2 uppercase tracking-wide"
+        >
           FUNDACIÓN NIÑOS DEJANDO HUELLAS
         </div>
-        <p class="text-lg text-base-content/70 mb-4">
+        <p class="text-base sm:text-lg text-base-content/70 mb-4">
           "El poder del hombre está en los niños"
         </p>
       </div>
-      <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+      <h1
+        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6"
+      >
         Cambiamos Vidas de Niños Vulnerables en
-        <span class="text-primary">Colombia</span>
+        <span class="text-primary block sm:inline">Colombia</span>
       </h1>
       <p
-        class="text-xl leading-relaxed text-base-content/80 mb-8 max-w-3xl mx-auto"
+        class="text-base sm:text-lg lg:text-xl leading-relaxed text-base-content/80 mb-6 sm:mb-8 max-w-3xl mx-auto px-4 sm:px-0"
       >
         Brindamos apoyo integral a niños, niñas y adolescentes en situación de
         vulnerabilidad. Con tu ayuda, creamos oportunidades reales de futuro
         para quienes más lo necesitan.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="#donar" class="btn btn-primary btn-lg px-8">
+      <div
+        class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4 sm:px-0"
+      >
+        <a
+          href="#donar"
+          class="btn btn-primary btn-lg w-full sm:w-auto sm:px-8 min-h-12 text-sm sm:text-base"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 mr-2"
+            class="h-4 w-4 sm:h-5 sm:w-5 mr-2"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -37,27 +46,41 @@
               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
             />
           </svg>
-          Dona $50.000 - Alimenta 10 Niños
+          <span class="hidden sm:inline">Dona $50.000 - Alimenta 10 Niños</span>
+          <span class="sm:hidden">Dona Ahora</span>
         </a>
-        <a href="#impacto" class="btn btn-outline btn-lg px-8"
-          >Ver Nuestro Impacto</a
+        <a
+          href="#impacto"
+          class="btn btn-outline btn-lg w-full sm:w-auto sm:px-8 min-h-12 text-sm sm:text-base"
         >
+          Ver Nuestro Impacto
+        </a>
       </div>
-      <div class="stats shadow bg-base-100 mt-12 max-w-2xl mx-auto">
-        <div class="stat">
-          <div class="stat-title">Niños Atendidos</div>
-          <div class="stat-value text-primary">2,500+</div>
-          <div class="stat-desc">En los últimos 3 años</div>
+      <div
+        class="stats stats-vertical sm:stats-horizontal shadow bg-base-100 w-full max-w-2xl mx-auto"
+      >
+        <div class="stat text-center">
+          <div class="stat-title text-xs sm:text-sm">Niños Atendidos</div>
+          <div class="stat-value text-primary text-xl sm:text-2xl lg:text-3xl">
+            2,500+
+          </div>
+          <div class="stat-desc text-xs sm:text-sm">En los últimos 3 años</div>
         </div>
-        <div class="stat">
-          <div class="stat-title">Transparencia</div>
-          <div class="stat-value text-success">92%</div>
-          <div class="stat-desc">Va directo a programas</div>
+        <div class="stat text-center">
+          <div class="stat-title text-xs sm:text-sm">Transparencia</div>
+          <div class="stat-value text-success text-xl sm:text-2xl lg:text-3xl">
+            92%
+          </div>
+          <div class="stat-desc text-xs sm:text-sm">Va directo a programas</div>
         </div>
-        <div class="stat">
-          <div class="stat-title">Impacto</div>
-          <div class="stat-value text-warning">15</div>
-          <div class="stat-desc">Comunidades beneficiadas</div>
+        <div class="stat text-center">
+          <div class="stat-title text-xs sm:text-sm">Impacto</div>
+          <div class="stat-value text-warning text-xl sm:text-2xl lg:text-3xl">
+            15
+          </div>
+          <div class="stat-desc text-xs sm:text-sm">
+            Comunidades beneficiadas
+          </div>
         </div>
       </div>
     </div>
@@ -65,25 +88,31 @@
 </div>
 
 <!-- Impact Section -->
-<section id="impacto" class="py-20 bg-base-100">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold mb-6">Transformamos Vidas Reales</h2>
-      <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
+<section id="impacto" class="py-12 sm:py-16 lg:py-20 bg-base-100">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
+        Transformamos Vidas Reales
+      </h2>
+      <p
+        class="text-base sm:text-lg lg:text-xl text-base-content/70 max-w-3xl mx-auto px-4 sm:px-0"
+      >
         Cada donación genera un impacto directo y medible en la vida de niños y
         familias colombianas
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-      <div class="card bg-base-200 shadow-sm">
-        <figure class="px-6 pt-6">
+    <div
+      class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12 sm:mb-16"
+    >
+      <div class="card bg-base-200 shadow-sm hover:shadow-md transition-shadow">
+        <figure class="px-4 sm:px-6 pt-4 sm:pt-6">
           <div
-            class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center"
+            class="w-16 h-16 sm:w-20 sm:h-20 bg-primary/10 rounded-full flex items-center justify-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-10 w-10 text-primary"
+              class="h-8 w-8 sm:h-10 sm:w-10 text-primary"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -97,25 +126,31 @@
             </svg>
           </div>
         </figure>
-        <div class="card-body text-center">
-          <h3 class="card-title justify-center text-2xl">Educación Integral</h3>
-          <p>
+        <div class="card-body text-center px-4 sm:px-6 py-4 sm:py-6">
+          <h3
+            class="card-title justify-center text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3"
+          >
+            Educación Integral
+          </h3>
+          <p class="text-sm sm:text-base mb-4">
             Proporcionamos educación de calidad, útiles escolares y becas de
             estudio para niños en situación vulnerable
           </p>
-          <div class="stat-value text-primary text-3xl">850</div>
-          <div class="stat-desc">Niños con educación garantizada</div>
+          <div class="stat-value text-primary text-2xl sm:text-3xl">850</div>
+          <div class="stat-desc text-xs sm:text-sm">
+            Niños con educación garantizada
+          </div>
         </div>
       </div>
 
-      <div class="card bg-base-200 shadow-sm">
-        <figure class="px-6 pt-6">
+      <div class="card bg-base-200 shadow-sm hover:shadow-md transition-shadow">
+        <figure class="px-4 sm:px-6 pt-4 sm:pt-6">
           <div
-            class="w-20 h-20 bg-success/10 rounded-full flex items-center justify-center"
+            class="w-16 h-16 sm:w-20 sm:h-20 bg-success/10 rounded-full flex items-center justify-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-10 w-10 text-success"
+              class="h-8 w-8 sm:h-10 sm:w-10 text-success"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -129,25 +164,31 @@
             </svg>
           </div>
         </figure>
-        <div class="card-body text-center">
-          <h3 class="card-title justify-center text-2xl">Apoyo Psicosocial</h3>
-          <p>
+        <div class="card-body text-center px-4 sm:px-6 py-4 sm:py-6">
+          <h3
+            class="card-title justify-center text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3"
+          >
+            Apoyo Psicosocial
+          </h3>
+          <p class="text-sm sm:text-base mb-4">
             Brindamos apoyo emocional y terapias especializadas para sanar
             traumas y construir resiliencia
           </p>
-          <div class="stat-value text-success text-3xl">1,200</div>
-          <div class="stat-desc">Terapias realizadas este año</div>
+          <div class="stat-value text-success text-2xl sm:text-3xl">1,200</div>
+          <div class="stat-desc text-xs sm:text-sm">
+            Terapias realizadas este año
+          </div>
         </div>
       </div>
 
-      <div class="card bg-base-200 shadow-sm">
-        <figure class="px-6 pt-6">
+      <div class="card bg-base-200 shadow-sm hover:shadow-md transition-shadow">
+        <figure class="px-4 sm:px-6 pt-4 sm:pt-6">
           <div
-            class="w-20 h-20 bg-warning/10 rounded-full flex items-center justify-center"
+            class="w-16 h-16 sm:w-20 sm:h-20 bg-warning/10 rounded-full flex items-center justify-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-10 w-10 text-warning"
+              class="h-8 w-8 sm:h-10 sm:w-10 text-warning"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -161,40 +202,48 @@
             </svg>
           </div>
         </figure>
-        <div class="card-body text-center">
-          <h3 class="card-title justify-center text-2xl">Nutrición y Salud</h3>
-          <p>
+        <div class="card-body text-center px-4 sm:px-6 py-4 sm:py-6">
+          <h3
+            class="card-title justify-center text-lg sm:text-xl lg:text-2xl mb-2 sm:mb-3"
+          >
+            Nutrición y Salud
+          </h3>
+          <p class="text-sm sm:text-base mb-4">
             Garantizamos alimentación nutritiva y atención médica básica para un
             desarrollo saludable
           </p>
-          <div class="stat-value text-warning text-3xl">500</div>
-          <div class="stat-desc">Niños con nutrición garantizada</div>
+          <div class="stat-value text-warning text-2xl sm:text-3xl">500</div>
+          <div class="stat-desc text-xs sm:text-sm">
+            Niños con nutrición garantizada
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Success Story -->
-    <div class="hero bg-primary/5 rounded-2xl">
-      <div class="hero-content flex-col lg:flex-row-reverse py-16">
-        <div class="lg:w-1/2">
+    <div class="hero bg-primary/5 rounded-xl sm:rounded-2xl mx-4 sm:mx-0">
+      <div
+        class="hero-content flex-col lg:flex-row-reverse py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8"
+      >
+        <div class="lg:w-1/2 w-full mb-8 lg:mb-0">
           <div class="mockup-window bg-base-200 shadow-lg">
-            <div class="bg-base-100 p-6">
+            <div class="bg-base-100 p-4 sm:p-6">
               <div class="flex items-center space-x-3 mb-4">
                 <div class="avatar">
                   <div
-                    class="w-12 rounded-full bg-primary text-primary-content flex items-center justify-center"
+                    class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary text-primary-content flex items-center justify-center"
                   >
-                    <span class="text-lg font-bold">S</span>
+                    <span class="text-base sm:text-lg font-bold">S</span>
                   </div>
                 </div>
                 <div>
-                  <div class="font-bold">Sofía M.</div>
-                  <div class="text-sm opacity-50">
+                  <div class="font-bold text-sm sm:text-base">Sofía M.</div>
+                  <div class="text-xs sm:text-sm opacity-50">
                     Beneficiaria del programa
                   </div>
                 </div>
               </div>
-              <p class="text-base italic">
+              <p class="text-sm sm:text-base italic leading-relaxed">
                 "Gracias a FUNIHUELLAS pude terminar el bachillerato y ahora
                 estudio enfermería. No solo me dieron útiles y uniformes, sino
                 que creyeron en mí cuando nadie más lo hacía."
@@ -202,25 +251,37 @@
             </div>
           </div>
         </div>
-        <div class="lg:w-1/2 lg:pr-8">
-          <h3 class="text-3xl font-bold mb-6">De la Vulnerabilidad al Éxito</h3>
-          <p class="text-lg mb-6 leading-relaxed">
+        <div class="lg:w-1/2 lg:pr-8 w-full">
+          <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6">
+            De la Vulnerabilidad al Éxito
+          </h3>
+          <p
+            class="text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 leading-relaxed"
+          >
             Sofía llegó a nosotros con 14 años, después de abandonar sus
             estudios por la difícil situación económica familiar. Hoy, a los 19
             años, es estudiante universitaria y ejemplo de superación para otros
             jóvenes en su comunidad.
           </p>
-          <div class="grid grid-cols-2 gap-4 mb-6">
-            <div class="stat bg-base-100 rounded-lg shadow-sm">
+          <div class="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <div class="stat bg-base-100 rounded-lg shadow-sm p-3 sm:p-4">
               <div class="stat-title text-xs">Antes</div>
-              <div class="stat-value text-lg text-error">Sin estudios</div>
+              <div
+                class="stat-value text-sm sm:text-base lg:text-lg text-error"
+              >
+                Sin estudios
+              </div>
             </div>
-            <div class="stat bg-base-100 rounded-lg shadow-sm">
+            <div class="stat bg-base-100 rounded-lg shadow-sm p-3 sm:p-4">
               <div class="stat-title text-xs">Ahora</div>
-              <div class="stat-value text-lg text-success">Universitaria</div>
+              <div
+                class="stat-value text-sm sm:text-base lg:text-lg text-success"
+              >
+                Universitaria
+              </div>
             </div>
           </div>
-          <a href="#donar" class="btn btn-primary"
+          <a href="#donar" class="btn btn-primary w-full sm:w-auto min-h-12"
             >Ayuda a Más Niños Como Sofía</a
           >
         </div>
