@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { NavbarComponent } from '../shared/components/navbar.component';
 import { FooterComponent } from '../shared/components/footer.component';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-layout',
-  imports: [ RouterOutlet, NavbarComponent, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   template: `
     <!-- Layout Container -->
     <div class="min-h-screen flex flex-col bg-base-100">
@@ -28,103 +29,44 @@ import { FooterComponent } from '../shared/components/footer.component';
       </footer>
     </div>
   `,
-  styles: [
-    `
-      :host {
-        display: block;
-        min-height: 100vh;
-      }
-
-      /* Ensure proper layout flow */
-      .min-h-screen {
-        min-height: 100vh;
-      }
-
-      /* Smooth scrolling for the entire layout */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Main content area styling */
-      main {
-        position: relative;
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        main {
-          padding-top: 0;
-        }
-      }
-
-      /* Loading state (optional - can be used for page transitions) */
-      .content-loading {
-        opacity: 0.7;
-        pointer-events: none;
-        transition: opacity 0.3s ease-in-out;
-      }
-
-      /* Animation for page transitions */
-      router-outlet + * {
-        animation: fadeIn 0.3s ease-in-out;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Ensure footer stays at bottom */
-      footer {
-        flex-shrink: 0;
-      }
-
-      /* Print styles */
-      @media print {
-        header,
-        footer {
-          display: none;
-        }
-
-        main {
-          padding: 0;
-          margin: 0;
-        }
-      }
-
-      /* High contrast mode support */
-      @media (prefers-contrast: high) {
-        .min-h-screen {
-          background: white;
-          color: black;
-        }
-      }
-
-      /* Reduced motion support */
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-        }
-
-        html {
-          scroll-behavior: auto;
-        }
-      }
-    `,
-  ],
+  styles: [],
 })
-export class LayoutComponent {
+export class LayoutComponent implements OnInit {
+  private router = inject(Router);
+  
   constructor() {
     // Layout component initialization
     this.setupLayoutEnhancements();
+  }
+  
+  ngOnInit() {
+    // Handle route changes for scroll management
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        // Check if there's a fragment (hash) in the URL
+        if (event.urlAfterRedirects.includes('#')) {
+          const fragment = event.urlAfterRedirects.split('#')[1];
+          setTimeout(() => this.scrollToFragment(fragment), 100);
+        }
+      });
+  }
+  
+  /**
+   * Scroll to a specific fragment/section
+   * @param fragment - The fragment to scroll to
+   */
+  private scrollToFragment(fragment: string): void {
+    const element = document.getElementById(fragment);
+    if (element) {
+      const navbarHeight = 80;
+      const elementPosition = element.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
   }
 
   /**
